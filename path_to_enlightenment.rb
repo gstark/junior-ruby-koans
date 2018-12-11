@@ -2,8 +2,8 @@
 
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'about_nil'
 require 'about_objects'
+require 'about_nil'
 require 'about_arrays'
 require 'about_hashes'
 require 'about_strings'
