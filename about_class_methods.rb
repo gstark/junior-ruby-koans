@@ -17,35 +17,6 @@ class AboutClassMethods < Neo::Koan
     assert_equal __, Dog.is_a?(Object)
   end
 
-  def test_objects_have_methods
-    fido = Dog.new
-    assert fido.methods.size > _n_
-  end
-
-  def test_classes_have_methods
-    assert Dog.methods.size > _n_
-  end
-
-  def test_you_can_define_methods_on_individual_objects
-    fido = Dog.new
-    def fido.wag
-      :fidos_wag
-    end
-    assert_equal __, fido.wag
-  end
-
-  def test_other_objects_are_not_affected_by_these_singleton_methods
-    fido = Dog.new
-    rover = Dog.new
-    def fido.wag
-      :fidos_wag
-    end
-
-    assert_raise(___) do
-      rover.wag
-    end
-  end
-
   # ------------------------------------------------------------------
 
   class Dog2
@@ -95,26 +66,6 @@ class AboutClassMethods < Neo::Koan
 
   def test_you_can_define_class_methods_inside_the_class
     assert_equal __, Dog.a_class_method
-  end
-
-  # ------------------------------------------------------------------
-
-  LastExpressionInClassStatement = class Dog
-                                     21
-                                   end
-
-  def test_class_statements_return_the_value_of_their_last_expression
-    assert_equal __, LastExpressionInClassStatement
-  end
-
-  # ------------------------------------------------------------------
-
-  SelfInsideOfClassStatement = class Dog
-                                 self
-                               end
-
-  def test_self_while_inside_class_is_class_object_not_instance
-    assert_equal __, Dog == SelfInsideOfClassStatement
   end
 
   # ------------------------------------------------------------------
